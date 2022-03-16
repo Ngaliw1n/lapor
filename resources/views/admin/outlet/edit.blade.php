@@ -14,14 +14,16 @@
             </div>
         @endif
         <div>
-            <form action="{{ route('outlets.update', $outlets[0]->outlets_id) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('outlets.update', $outlets[0]->outlets_id) }}" method="POST"
+                enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="row mb-3">
                     <label for="nm_outlet" class="col-md-4 col-form-label text-md-end">Nama Outlet</label>
                     <div class="col-md-6">
                         <input id="nm_outlet" type="text" class="form-control @error('nm_outlet') is-invalid @enderror"
-                            name="nm_outlet" value="{{ $outlets[0]->nm_outlet }}" required autocomplete="nm_outlet" autofocus>
+                            name="nm_outlet" value="{{ $outlets[0]->nm_outlet }}" required autocomplete="nm_outlet"
+                            autofocus>
                     </div>
                 </div>
 
@@ -31,7 +33,7 @@
                     </label>
                     <div class="col-md-6">
                         <input id="detail" type="text" class="form-control @error('detail') is-invalid @enderror"
-                            name="detail" value="{{ $outlet->detail }}" required autocomplete="detail" autofocus>
+                            name="detail" value="{{ $outlets[0]->detail }}" required autocomplete="detail" autofocus>
                     </div>
                 </div>
 
@@ -42,7 +44,7 @@
                     <div class="col-md-6">
                         <input type="file" name="gmbr_outlet" id="gmbr_outlet" class="form-control" placeholder="image"
                             required>
-                        <img class="my-3" src="/image/{{ $outlet->gmbr_outlet }}" width="300px">
+                        <img class="my-3" src="/image/{{ $outlets[0]->gmbr_outlet }}" width="300px">
                     </div>
                 </div>
 

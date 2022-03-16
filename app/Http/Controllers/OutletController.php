@@ -118,9 +118,10 @@ class OutletController extends Controller
      * @param  \App\Models\Outlet  $outlet
      * @return \Illuminate\Http\Response
      */
-    public function edit(Outlet $outlet)
+    public function edit($outlet)
     {
-        return view('admin.outlet.edit',compact('outlet'));
+       $outlets = DB::table('outlets')->where('outlets_id', $outlet)->get();
+       return view('admin.outlet.edit',compact('outlets'));
     }
 
     /**
@@ -130,14 +131,14 @@ class OutletController extends Controller
      * @param  \App\Models\Outlet  $outlet
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Outlet $outlet)
+    public function update(Request $request, $outlet)
     {
         $request->validate([
             'nm_outlet' => 'required',
             'detail' => 'required',
             'gmbr_outlet' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
         ]);
-        $input = $request->all();
+        $input = $request->except(['_token','_method']);
         
         if ($gmbr_outlet = $request->file('gmbr_outlet')) {
             $destinationPath = 'image/';
@@ -148,7 +149,9 @@ class OutletController extends Controller
             unset($input['gmbr_outlet']);
         }
         
-        $outlet->update($input);
+        DB::table('outlets')
+              ->where('outlets_id', $outlet)
+              ->update($input);
     
         return redirect()->route('outlet.indexAdmin')
                         ->with('edit','Outlet sukses diedit');

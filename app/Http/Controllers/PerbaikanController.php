@@ -19,9 +19,7 @@ class PerbaikanController extends Controller
     }
 
     public function indexAdmin()
-    {
-        
-        
+    {              
         $datas = DB::table('perbaikan')
                 ->join('mesins','perbaikan.id_mesins','=','mesins.id_mesin', 'right outer')
                 ->join('outlets','perbaikan.id_outlets','=','outlets.outlets_id', 'right outer')

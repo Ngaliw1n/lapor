@@ -52,6 +52,7 @@ Route::group(["middleware" => ["is_admin"]], function(){
     Route::resource('mesins', MesinController::class);
     Route::get('mesin/indexAdmin',[MesinController::class, 'indexAdmin'])->name('mesins.indexAdmin');    
     Route::get('/mesin/cari',[MesinController::class, 'cari']);
+    Route::get('/mesin/detail',[MesinController::class, 'detailMesin']);
 
    //PerbaikanController
    Route::resource('perbaikans', PerbaikanController::class);

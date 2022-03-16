@@ -26,6 +26,8 @@ class CreatePerbaikanTable extends Migration
             $table->foreign('id_outlets')->references('outlets_id')->on('outlets')->onDelete('cascade');
             $table->unsignedBigInteger('id_pelapor');
             $table->foreign('id_pelapor')->references('id')->on('users')->onDelete('cascade');
+            $table->unsignedBigInteger('id_kerusakan');
+            $table->foreign('id_kerusakan')->references('id_kerusakan')->on('kerusakan')->onDelete('cascade');
             $table->timestamps(); 
         });
     }

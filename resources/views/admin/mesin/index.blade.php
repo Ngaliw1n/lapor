@@ -77,7 +77,7 @@
                             <td>{{ $data->nm_outlet }}</td>
                             <td>{{ $data->tgl }}</td>
                             <td>
-                                <form action="" method="GET" class="d-md-inline-block form-inline">
+                                <form action="/mesin/detail" method="GET" class="d-md-inline-block form-inline">
                                     <input class="form-control" type="hidden" placeholder="Cari akun" name='cari'
                                         value="{{ $data->id_mesin }}" />
                                     <button class="btn btn-primary btn-sm" id="btnNavbarSearch" type="submit"><i

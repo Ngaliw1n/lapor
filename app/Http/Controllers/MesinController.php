@@ -53,6 +53,24 @@ class MesinController extends Controller
         return view('admin.mesin.index',compact('datas','datas2')); 
 	}
 
+    public function detailMesin(Request $request) 
+    {
+        $cari = $request->cari;
+        $data = DB::table('mesins')
+        ->select('mesins.*')
+		->where('id_mesin','=',$cari)
+        ->get();
+
+        $data2 = DB::table('kerusakan')
+        ->join('perbaikan','kerusakan.id_kerusakan','=','perbaikan.id_kerusakan', 'left outer')
+        ->select('kerusakan.nm_kerusakan','kerusakan.tgl', 'kerusakan.gmbr_kerusakan', 'kerusakan.detail', DB::raw('COUNT(perbaikan.id_perbaikan) as status'))
+        ->groupBy('kerusakan.nm_kerusakan')
+        ->where('kerusakan.id_mesins','like',"%".$cari."%")
+        ->get();
+        
+        // dd($data2);
+        return view('admin.mesin.detail', compact('data', 'data2'));
+    }
     /**
      * Show the form for creating a new resource.
      *

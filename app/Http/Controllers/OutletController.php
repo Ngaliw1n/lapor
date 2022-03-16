@@ -44,7 +44,6 @@ class OutletController extends Controller
                 ->groupBy('outlets.outlets_id')
 		        ->where('outlets.nm_outlet','like',"%".$cari."%")
                 ->paginate(10);
-
         return view('admin.outlet.index',['datas' => $datas]); 
 	}
 

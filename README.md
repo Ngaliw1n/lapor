@@ -113,7 +113,7 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-Click <a href="https://github.com/Yogabayu/e-laporFixAdmin/wiki/Instalasi"> HERE </a>
+Click <a href="https://github.com/Ngaliw1n/lapor/wiki/Cara-Instalasi"> HERE </a>
 <!--
 _Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 

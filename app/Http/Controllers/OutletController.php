@@ -35,7 +35,7 @@ class OutletController extends Controller
 
     public function cari(Request $request)
 	{
-		// menangkap data pencarian
+		// menangkap data pencarian...
 		$cari = $request->cari;
     		// mengambil data dari table pegawai sesuai pencarian data
 		$datas = DB::table('outlets')

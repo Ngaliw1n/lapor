@@ -18,7 +18,7 @@ class CreateMesinsTable extends Migration
             $table->string('nm_mesin');
             $table->string('gbr_mesin');            
             $table->unsignedBigInteger('id_outlet');
-            $table->foreign('id_outlet')->references('id')->on('outlets')->onDelete('cascade');
+            $table->foreign('id_outlet')->references('outlets_id')->on('outlets')->onDelete('cascade');
             $table->date('tgl')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamps();            
         });

@@ -22,8 +22,8 @@ class CreateKerusakanTable extends Migration
             
             $table->unsignedBigInteger('id_mesins');
             $table->foreign('id_mesins')->references('id_mesin')->on('mesins')->onDelete('cascade');
-            $table->unsignedBigInteger('id_outlets');
-            $table->foreign('id_outlets')->references('id')->on('outlets')->onDelete('cascade');
+            $table->unsignedBigInteger('id_outlet');
+            $table->foreign('id_outlet')->references('outlets_id')->on('outlets')->onDelete('cascade');
             $table->unsignedBigInteger('id_pelapor');
             $table->foreign('id_pelapor')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps(); 

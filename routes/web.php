@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\OutletController;
 use App\Http\Controllers\MesinController;
 use App\Http\Controllers\PerbaikanController;
+use App\Http\Controllers\KerusakanController;
   
 
 /*
@@ -53,6 +54,12 @@ Route::group(["middleware" => ["is_admin"]], function(){
     Route::get('mesin/indexAdmin',[MesinController::class, 'indexAdmin'])->name('mesins.indexAdmin');    
     Route::get('/mesin/cari',[MesinController::class, 'cari']);
     Route::get('/mesin/detail',[MesinController::class, 'detailMesin']);
+
+    //kerusakan Controller
+    Route::resource('kerusakans', KerusakanController::class);
+    Route::get('kerusakan/indexAdmin',[KerusakanController::class, 'indexAdmin'])->name('kerusakans.indexAdmin');    
+    Route::get('/kerusakan/cari',[KerusakanController::class, 'cari']);
+    Route::get('/kerusakan/detail',[KerusakanController::class, 'detailKerusakan']);
 
    //PerbaikanController
    Route::resource('perbaikans', PerbaikanController::class);

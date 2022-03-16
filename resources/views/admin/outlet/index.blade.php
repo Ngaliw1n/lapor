@@ -124,19 +124,20 @@
                 $i = 0;
                 ?>
                 @foreach ($datas as $data)
-                    <tr>
-                        <td>{{ ++$i }}</td>
-                        <td>{{ $data->nm_outlet }}</td>
-                        <td class="p-2 flex-fill bd-highlight">{{ $data->detail }}</td>
-                        <td>{{ $data->jml_mesin }}</td>
-                        <td>
-                            <form action="/outlet/detail" method="GET" class="d-md-inline-block form-inline">
-                                <input class="form-control" type="hidden" placeholder="Cari akun" name='cari'
-                                    value="{{ $data->outlets_id }}" />
-                                <button class="btn btn-primary btn-sm" id="btnNavbarSearch" type="submit"><i
-                                        class="fa fa-eye"></i></button>
-                            </form>
-                            {{-- @else
+                    @if ($data->outlets_id != 0)
+                        <tr>
+                            <td>{{ ++$i }}</td>
+                            <td>{{ $data->nm_outlet }}</td>
+                            <td class="p-2 flex-fill bd-highlight">{{ $data->detail }}</td>
+                            <td>{{ $data->jml_mesin }}</td>
+                            <td>
+                                <form action="/outlet/detail" method="GET" class="d-md-inline-block form-inline">
+                                    <input class="form-control" type="hidden" placeholder="Cari akun" name='cari'
+                                        value="{{ $data->outlets_id }}" />
+                                    <button class="btn btn-primary btn-sm" id="btnNavbarSearch" type="submit"><i
+                                            class="fa fa-eye"></i></button>
+                                </form>
+                                {{-- @else
                                 <form action="#" method="GET" class="d-md-inline-block form-inline">
                                     <input class="form-control" type="hidden" placeholder="Cari akun" name='cari'
                                         value="{{ $data->outlets_id }}" />
@@ -144,29 +145,31 @@
                                             class="fa fa-eye"></i></button>
                                 </form>
                             @endif --}}
-                            <form method="post" action="{{ route('outlets.destroy', $data->outlets_id) }}"
-                                class="d-md-inline-block form-inline">
-                                {{-- <a class="btn btn-primary btn-sm" href="{{ url('outlet/detail', $data->outlets_id) }}">
+                                <form method="post" action="{{ route('outlets.destroy', $data->outlets_id) }}"
+                                    class="d-md-inline-block form-inline">
+                                    {{-- <a class="btn btn-primary btn-sm" href="{{ url('outlet/detail', $data->outlets_id) }}">
                                     <div class="sb-nav-link-icon">
                                         <i class="fa fa-eye"></i>
                                     </div>
                                 </a> --}}
 
-                                <a class="btn btn-success btn-sm" href="{{ route('outlets.edit', $data->outlets_id) }}">
-                                    <div class="sb-nav-link-icon">
-                                        <i class="fa fa-edit"></i>
-                                    </div>
-                                </a>
-                                @method('delete')
-                                @csrf
-                                <button type="submit" class="btn btn-danger btn-sm show_confirm">
-                                    <div class="sb-nav-link-icon">
-                                        <i class="fa fa-minus"></i>
-                                    </div>
-                                </button>
-                            </form>
-                        </td>
-                    </tr>
+                                    <a class="btn btn-success btn-sm"
+                                        href="{{ route('outlets.edit', $data->outlets_id) }}">
+                                        <div class="sb-nav-link-icon">
+                                            <i class="fa fa-edit"></i>
+                                        </div>
+                                    </a>
+                                    @method('delete')
+                                    @csrf
+                                    <button type="submit" class="btn btn-danger btn-sm show_confirm">
+                                        <div class="sb-nav-link-icon">
+                                            <i class="fa fa-minus"></i>
+                                        </div>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    @endif
                 @endforeach
             </table>
 

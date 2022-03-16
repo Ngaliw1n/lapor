@@ -55,12 +55,18 @@
             $i = 0;
             ?>
             @foreach ($data as $data)
-                <tr>
-                    <td>{{ ++$i }}</td>
-                    <td>{{ $data->nm_mesin }}</td>
-                    <td><img src="/image/{{ $data->gbr_mesin }}" width="200px"></td>
-                    <td>{{ $data->tgl }}</td>
-                </tr>
+                @if ($data->id_mesin != 0)
+                    <tr>
+                        <td>{{ ++$i }}</td>
+                        <td>{{ $data->nm_mesin }}</td>
+                        <td><img src="/image/{{ $data->gbr_mesin }}" width="200px"></td>
+                        <td>{{ $data->tgl }}</td>
+                    </tr>
+                @else
+                    <tr>
+                        <td>Data Kosong</td>
+                    </tr>
+                @endif
             @endforeach
         </table>
     </div>

@@ -207,13 +207,12 @@
                                             </a>
                                         @else
                                         @endif
-                                        <a class="nav-link" href="#">
+                                        <a class="nav-link" href="{{ route('kerusakans.indexAdmin') }}">
                                             <div class="sb-nav-link-icon">
                                                 <i class="fa fa-fw fa-plus"></i>
                                             </div>
                                             Data Kerusakan
                                         </a>
-                                        
                                     </nav>
                                 </div>
                             </nav>

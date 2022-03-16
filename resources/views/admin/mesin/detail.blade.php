@@ -54,7 +54,7 @@
                     <td>{{ ++$i }}</td>
                     <td>{{ $datas->nm_kerusakan }}</td>
                     <td>{{ $datas->tgl }}</td>
-                    <td>{{ $datas->gmbr_kerusakan }}</td>
+                    <td><img src="/image/{{ $datas->gmbr_kerusakan }}" width="200px"></td>
                     <td>{{ $datas->detail }}</td>
                     {{-- <td><img src="/image/{{ $datas->gbr_mesin }}" width="200px"></td> --}}
                     {{-- <td>{{ $datas->status }}</td> --}}

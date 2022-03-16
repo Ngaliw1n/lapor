@@ -25,7 +25,6 @@ class PerbaikanController extends Controller
                 ->join('outlets','perbaikan.id_outlets','=','outlets.outlets_id', 'right outer')
                 ->join('users','perbaikan.id_pelapor','=','users.id', 'right outer')              
                 ->select('mesins.id_mesin','mesins.nm_mesin','outlets.outlets_id','outlets.nm_outlet', 'users.id','users.name','perbaikan.*')
-                //->select('mesins.id_mesin','outlets.nm_outlet', 'outlets.outlets_id','users.id','users.name','perbaikan.*')
                 ->groupBy('perbaikan.id_perbaikan')
                 ->paginate(10);
 

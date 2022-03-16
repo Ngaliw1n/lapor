@@ -30,7 +30,7 @@
 <br />
 <div align="center">
   <a href="#">
-    <img src="https://github.com/Yogabayu/e-lapor/blob/master/Elapor.png" width="400">
+    <img src="https://github.com/Ngaliw1n/lapor/blob/master/Elapor.png" width="400">
   </a>
 
   <h2 align="center">E-LAPOR</h2>
@@ -38,14 +38,14 @@
   <p align="center">
     Sebuah Project Pelaporan Alat Online
     <br />
-    <a href="https://github.com/Yogabayu/e-laporFixAdmin#readme"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/Ngaliw1n/lapor#readme"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <!-- <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
     · -->
-    <a href="https://github.com/Yogabayu/e-laporFixAdmin/issues">Report Bug</a>
+    <a href="https://github.com/Ngaliw1n/lapor/issues">Report Bug</a>
     ·
-    <a href="https://github.com/Yogabayu/e-laporFixAdmin/issues">Request Feature</a>
+    <a href="https://github.com/Ngaliw1n/lapor/issues">Request Feature</a>
   </p>
 </div>
 

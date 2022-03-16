@@ -162,7 +162,7 @@ class OutletController extends Controller
      */
     public function destroy($outlet)
     {
-        DB::table('outlets')->where('id', $outlet)->delete();
+        DB::table('outlets')->where('outlets_id', $outlet)->delete();
     
         return redirect()->back()->with('hapus', 'Berhasil menghapus Akun');
     }

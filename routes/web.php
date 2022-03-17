@@ -7,7 +7,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\OutletController;
 use App\Http\Controllers\MesinController;
 use App\Http\Controllers\PerbaikanController;
-use App\Http\Controllers\SparepartController;  
+//sparepartcontroller
+use App\Http\Controllers\SparepartController;   
 
 /*
 |--------------------------------------------------------------------------
@@ -58,7 +59,7 @@ Route::group(["middleware" => ["is_admin"]], function(){
    Route::get('perbaikan/indexAdmin',[PerbaikanController::class, 'indexAdmin'])->name('perbaikan.indexAdmin');    
    Route::get('/perbaikan/cari',[PerbaikanController::class, 'cari']);
 
-   //SparepartController
+   //SparepartController.
     Route::resource('spareparts', SparepartController::class);
     Route::get('sparepart/indexAdmin',[SparepartController::class, 'indexAdmin'])->name('spareparts.indexAdmin');    
     Route::get('/sparepart/cari',[SparepartController::class, 'cari']);

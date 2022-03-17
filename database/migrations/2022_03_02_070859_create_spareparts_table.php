@@ -18,12 +18,12 @@ class CreateSparepartsTable extends Migration
             $table->string('nm_spareparts');        
             $table->string('gmbr_spareparts');
             $table->string('kategori');
-            $table->string('detail');
+            $table->string('spareparts_detail');
             
             $table->unsignedBigInteger('id_mesins');
             $table->foreign('id_mesins')->references('id_mesin')->on('mesins')->onDelete('cascade');
             $table->unsignedBigInteger('id_outlets');
-            $table->foreign('id_outlets')->references('id')->on('outlets')->onDelete('cascade');
+            $table->foreign('id_outlets')->references('outlets_id')->on('outlets')->onDelete('cascade');
             $table->timestamps(); 
         });
     }

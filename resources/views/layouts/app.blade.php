@@ -199,20 +199,23 @@
                                                 Data Mesin
                                             </a>
 
+                                            
                                             <a class="nav-link" href="{{ route('perbaikan.indexAdmin') }}">
                                                 <div class="sb-nav-link-icon">
                                                     <i class="fa fa-fw fa-plus"></i>
                                                 </div>
                                                 Data Perbaikan
                                             </a>
+
+                                            <a class="nav-link" href="{{ route('spareparts.indexAdmin') }}">
+                                                <div class="sb-nav-link-icon">
+                                                    <i class="fa fa-fw fa-plus"></i>
+                                                </div>
+                                                Data Spareparts
+                                            </a>
                                         @else
                                         @endif
-                                        <a class="nav-link" href="#">
-                                            <div class="sb-nav-link-icon">
-                                                <i class="fa fa-fw fa-plus"></i>
-                                            </div>
-                                            Data Kerusakan
-                                        </a>
+                                        
                                         
                                     </nav>
                                 </div>
